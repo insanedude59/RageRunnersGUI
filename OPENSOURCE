@@ -1,14 +1,14 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/kav"))()
-local Window = Library.CreateLib("Rage Runners", "DarkTheme")
+local Window = Library.CreateLib("Rage Runners", "Synapse")
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("Features")
 
 Section:NewButton("TP To End of the Map", "TP's to the winning spot", function()
-  wait(1)
-local endpos = game.Workspace.Maps.End.Light.Position
-local player = game.Players.LocalPlayer
-player.CFrame = CFrame.new(endpos)
+local player = game.Players.LocalPlayer.Character.HumanoidRootPart
+local e = game.Workspace.Maps.End.Light.Position
+player.CFrame = CFrame.new(e)
 end)
+
 Section:NewToggle("Autofarm", "Automatically teleports to the winning spot", function(t)
     toggle = t
     while toggle do 
@@ -20,11 +20,9 @@ player.CFrame = CFrame.new(e)
 end)
 Section:NewToggle("Auto Coins", "Tp's to the coins in the game.", function(t)
     toggle = t
-    while toggled do wait()
+    while toggle do wait()
         local part = game:GetService("Workspace").MapCoins.Coin
-        if part.Transparency == "0" then
     local character = game.Players.LocalPlayer.character
     character.HumanoidRootPart.CFrame = CFrame.new(part.Position)
-        end
     end
  end)
