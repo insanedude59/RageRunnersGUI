@@ -14,8 +14,8 @@ Section:NewToggle("Autofarm", "Automatically gets you in 1st place (this may not
     while toggle do 
              wait(1)
 local player = game.Players.LocalPlayer.Character.HumanoidRootPart
-local e = game.Workspace.Maps.End.Light.Position
-player.CFrame = CFrame.new(e)
+local endpos = game.Workspace.Maps.End.Light.Position
+player.CFrame = CFrame.new(endpos)
     end
 end)
 Section:NewToggle("Auto Coins", "Tp's to the coins in the game.", function(t)
